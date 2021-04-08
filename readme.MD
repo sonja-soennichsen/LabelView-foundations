@@ -105,3 +105,6 @@ Now that you have verified that this setup works, it is time to make it your own
 Even before you add any "features", this makes the website and code look and feel more like it is yours already! 
 
 Once you have made some of these small changes, remember to add, commit, and push your changes - and with that, it should automatically be live on the internet! 
+
+
+Hopefully only I will see this change...
