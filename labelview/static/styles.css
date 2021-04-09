@@ -217,3 +217,14 @@ h2 {
 .homepage {
     height: 100vh;
 }
+
+.result {
+    font-size: 1rem;
+    margin: 1vh 5vw;
+    color: #614e3e;
+}
+
+.resultTitle {
+    margin: 7vh 0 0 5vw;
+    color: #B9ABA0;
+}
