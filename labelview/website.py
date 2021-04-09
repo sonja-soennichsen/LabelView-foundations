@@ -10,12 +10,12 @@ from flask import render_template
 
 # app.config.from_pyfile("config.py") 
 
-if getenv('GAE_ENV', '').startswith('standard'):
-    app_engine_path = "/tmp/labelview.sqlite"
-    copyfile(app.config['DATABASE_FILE'], app_engine_path)
-    app.config['DATABASE_FILE'] = app_engine_path
-else:
-    pass
+# if getenv('GAE_ENV', '').startswith('standard'):
+#     app_engine_path = "/tmp/labelview.sqlite"
+#     copyfile(app.config['DATABASE_FILE'], app_engine_path)
+#     app.config['DATABASE_FILE'] = app_engine_path
+# else:
+#     pass
 
 
 app = Flask(__name__)
