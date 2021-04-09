@@ -1,25 +1,10 @@
-from os import getenv
-from shutil import copyfile 
-
-from flask import Flask, request
-from flask import render_template
-# from labelview.controllers.database_helpers import connect_to_database
-# from labelview.controllers.database_helpers import close_conection_to_database
-# from labelview.controllers.database_helpers import change_database
-# from labelview.controllers.database_helpers import query_database
-
-# app.config.from_pyfile("config.py") 
-
-# if getenv('GAE_ENV', '').startswith('standard'):
-#     app_engine_path = "/tmp/labelview.sqlite"
-#     copyfile(app.config['DATABASE_FILE'], app_engine_path)
-#     app.config['DATABASE_FILE'] = app_engine_path
-# else:
-#     pass
-
+from flask import Flask
+from flask import render_template, request
 
 app = Flask(__name__)
 
+# configure Flask using environment variables
+app.config.from_pyfile("config.py")
 
 @app.route('/')
 def index():
