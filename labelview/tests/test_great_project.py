@@ -1,4 +1,4 @@
-from great_project.website import app
+from labelview.website import app
 
 
 def test_index():
