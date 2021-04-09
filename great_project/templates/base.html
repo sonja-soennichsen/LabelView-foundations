@@ -4,21 +4,26 @@
     <title> {{ page_title }}</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_mobile.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
+    <span class="logo"> <a href="/">LABEL VIEW </a></span>
+    <div class="box">
+        <table>
+            <td><a href="/quiz"> Quiz </a></td>
+            <td><a href=""> Label Overview </a></td>
+            <td><a href=""> Glossary </a></td>
+        </table>
+    </div>
 
-    <header>
-        <div class="banner">
-            <h1> My Great Project juhuuuuu </h1>
-        </div>
-    </header>
     <main>
         {% block content%} {% endblock %}
     </main>
     <footer>
-        <h3> <em> By Your Name Here </em></h3>
+        <span class="logo"> <a href="/">LABEL VIEW </a></span> <br><br><br>
+        <a href="">Contact</a> <a href="">Glossary</a> <a href="">Overview</a> <a href="/quiz">Quiz</a> <a href="">Resources</a>
     </footer>
 </body>

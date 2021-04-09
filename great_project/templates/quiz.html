@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Find the Label fitting to your requirements</h1>
+<form>
+    <h2>Legal requirements</h2>
+    <input type="radio" id="meets" name="legal" value="meets" required>
+    <label for="meets">Meets legal standards (EU)</label><br>
+    <input type="radio" id="exceeds" name="legal" value="exceeds" required>
+    <label for="exceeds">Exceeds legal standards (EU)</label><br>
+
+    <h2>Budget</h2>
+    <input type="radio" id="low" name="budget" value="low" required>
+    <label for="low">Low (Price like conventional products)</label><br>
+    <input type="radio" id="middle" name="budget" value="middle" required>
+    <label for="middle">Middle (Price little more expensive thant conventional products)</label><br>
+    <input type="radio" id="high" name="budget" value="high" required>
+    <label for="high">High (Price significantly higher than conventional products)</label><br>
+
+    <h2>Animal Welfare</h2>
+    <input type="checkbox" id="stockDensity" name="animal" value="StockDensity">
+    <label for="StockDensity">Controlled Stock Density</label><br>
+    <input type="checkbox" id="crueltyFree" name="animal" value="crueltyFree">
+    <label for="crueltyFree">Cruelty Free</label><br>
+    <input type="checkbox" id="freeRange" name="animal" value="freeRange">
+    <label for="freeRange">Access to Free Range</label><br>
+    <input type="checkbox" id="organicFood" name="animal" value="organicFood">
+    <label for="organicFood">Organic Food</label><br>
+    <input type="checkbox" id="pasturage" name="animal" value="pasturage">
+    <label for="pasturage">Compulsory Pasturage</label><br>
+    <input type="checkbox" id="geneticEngineeringAnimals" name="animal" value="geneticEngineeringAnimals">
+    <label for="geneticEngineeringAnimals">No Genetic Engineering</label><br>
+    <input type="checkbox" id="cowTrainer" name="animal" value="cowTrainer">
+    <label for="cowTrainer">No Cow Trainer</label><br>
+    <input type="checkbox" id="antibiotics" name="animal" value="antibiotics">
+    <label for="antibiotics">Limited Antibiotics</label><br>
+
+    <h2>Produce</h2>
+    <input type="checkbox" id="PlantEnginneering" name="produce" value="PlantEnginneering">
+    <label for="PlantEnginneering">No Plant Genetic Engineering</label><br>
+    <input type="checkbox" id="water" name="produce" value="water">
+    <label for="water">Sustainable use of water</label><br>
+    <input type="checkbox" id="WasteManagement" name="produce" value="WasteManagement">
+    <label for="WasteManagement">Waste Management</label><br>
+    <input type="checkbox" id="Fertilizer" name="produce" value="Fertilizer">
+    <label for="Fertilizer">Controlled amounts of Fertilizer</label><br>
+    <input type="checkbox" id="organicFertilizer" name="produce" value="organicFertilizer">
+    <label for="organicFertilizer">Organic Fertilizer</label><br>
+    <input type="checkbox" id="mealFertilizer" name="produce" value="mealFertilizer">
+    <label for="mealFertilizer">No Meal Fertilizer (Bone, Blood etc.)</label><br>
+    <input type="checkbox" id="additives" name="produce" value="additives">
+    <label for="additives">Fewer approved additives</label><br>
+
+    <h2>Governance</h2>
+    <input type="checkbox" id="transparent" name="governance" value="transparent">
+    <label for="transparent">Transparent goals, claims and structure</label><br>
+    <input type="checkbox" id="independent" name="governance" value="independent">
+    <label for="independent">Controlled by independent third-party</label><br>
+    <input type="checkbox" id="control" name="governance" value="control">
+    <label for="control">Frequent, rigid control</label><br>
+    <input type="checkbox" id="traceability" name="governance" value="traceability">
+    <label for="traceability">Guarenteed Traceability</label><br>
+    <input type="checkbox" id="conversion" name="governance" value="conversion">
+    <label for="conversion">Mandatory Full Farm Conversion</label><br>
+    <input type="checkbox" id="sustainability" name="governance" value="sustainability">
+    <label for="sustainability">Additional care for Sustainability</label><br>
+    <input type="checkbox" id="social" name="governance" value="social">
+    <label for="social">Social Responsibility</label><br>
+    <input type="submit" value="GET RESULTS" id="submit">
+</form>
+
+{% endblock %}
