@@ -53,4 +53,7 @@
     .logo a {
         margin: 1rem 25vw;
     }
+    .homepage {
+        height: max-content;
+    }
 }

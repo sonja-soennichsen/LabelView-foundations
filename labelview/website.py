@@ -1,6 +1,5 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
-
 
 app = Flask(__name__)
 
@@ -16,6 +15,8 @@ def result():
 @app.route('/quiz')
 def quiz():
     return render_template('quiz.html')
+
+
 
 
 if __name__ == "__main__":
