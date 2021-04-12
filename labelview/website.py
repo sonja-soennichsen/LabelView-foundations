@@ -1,5 +1,10 @@
+import redis
+import os
 from flask import Flask
 from flask import render_template, request
+from werkzeug.wrappers import Request
+from werkzeug.datastructures import CombinedMultiDict, MultiDict
+
 
 app = Flask(__name__)
 
@@ -10,11 +15,35 @@ app.config.from_pyfile("config.py")
 def index():
     return render_template('index.html', page_title="Labelview")
 
-@app.route('/result',  methods=['POST'])
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html')
+
+
+@app.route("/result")
 def result():
-    legal = request.form.get('legal')
-    budget = request.form.get('budget')
-    return render_template('result.html', page_title="Labelview", budget=budget, legal=legal)
+
+    if request.args:
+        legal = request.args.get('legal')
+        budget = request.args.get('budget')
+        # We have our query string nicely serialized as a Python dictionary
+        args = request.args
+        animals = args.getlist("animal")
+        produce = args.getlist("produce")
+        governance = args.getlist("governance")
+
+        # We'll create a string to display the parameters & values
+        serialized = ", ".join(f"{k}: {v}" for k, v in request.args.items())
+
+        # Display the query string to the client in a different format
+        # return f"(Query) {serialized}  {animals}", 200
+        return render_template('result.html', page_title="Labelview", budget=budget, legal=legal, animal=animals, produce=produce, governance=governance )
+    else:
+
+        return "No query string received", 200 
+
+
+
 
 # @app.route('/result', methods=['POST'])
 # def result():
@@ -55,13 +84,6 @@ def result():
 #         # something bad happended. Return an error page and a 500 error
 #         error_code = 500
 #         return render_template('error.html', page_title=error_code), error_code
-
-
-@app.route('/quiz')
-def quiz():
-    return render_template('quiz.html')
-
-
 
 
 if __name__ == "__main__":

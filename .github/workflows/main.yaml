@@ -35,7 +35,6 @@ jobs:
         pytest --doctest-modules --junitxml=junit/test-results.xml
     - name: Prepare Deployment 
       run: | 
-        echo "  DB_PASSWORD: \"${{ secrets.PRODUCTION_DATABASE_PASSWORD }}\" " >> app.yaml
         more app.yaml
     - name: Deploy to Google App Engine
       uses: google-github-actions/deploy-appengine@main

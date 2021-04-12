@@ -111,16 +111,96 @@ form {
     border: 2px solid #b9aba0;
     padding: 2rem 4rem 4rem 6rem;
     border-radius: 5px;
-    line-height: 2rem;
+    color: #614e3e;
 }
+
+/* The container */
+label {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+    margin-left:2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #b9aba0;
+    padding: 1rem 5rem;
+    transition:0.3s;
+    border-radius: 5px;
+    color: #614e3e;
+  }
+  
+  label:hover{
+  background-color:#eee4dc;
+  }
+  
+  /* Hide the browser's default checkbox */
+  label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 1.1rem;
+    left: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #b9aba0;
+  }
+
+  .container .checkmark {
+    position: absolute;
+    top: 1.1rem;
+    left: 1rem;
+    height: 25px;
+    width: 25px;
+    background-color: #b9aba0;
+    border-radius: 50%;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  label input:checked ~ .checkmark {
+    background-color: #614e3e;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
 input {
     margin-left: 3rem;
 }
 
-input [type=checkbox] {
-    background-color: #917b6a;
-}
 
 #submit {
     width: 100%;

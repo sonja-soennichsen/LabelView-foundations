@@ -1,6 +1,31 @@
 {% extends "base.html" %} {% block content %}
 <div class="resultTitle">Your Input</div>
-<div class="result"> Your Budget: <b>{{budget}}</b> <br> You want the label to <b>{{legal}}</b> legal requirements</div>
+<div class="result">
+    Your Budget: <b>{{budget}}</b> <br> 
+
+    You {% if legal %} want the label to <b>{{legal}}</b>  {% else %} dont't care about the {% endif %} legal requirements <br> <br>
+
+    {% if animal %}
+        Your Animal Welfare Criteria: 
+        {% for criteria in animal %} 
+            <li>{{criteria}}</li>
+        {% endfor %} 
+    {% endif %} <br> <br> 
+    
+    {% if produce %}
+    Your Produce Criteria: 
+        {% for criteria in produce %}
+            <li>{{criteria}}</li>
+        {% endfor %}
+    {% endif %} <br> <br> 
+    
+    {% if produce %}
+        Your Governance Criteria: 
+        {% for criteria in governance %}
+            <li>{{criteria}}</li>
+        {% endfor %}
+    {% endif %}
+</div>
 
 <div class="labelview" style="margin-top: 5vh;">
     <img src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e2/Naturland_Logo.svg/1200px-Naturland_Logo.svg.png" id="labelLogo" alt="Naturland Logo" />
