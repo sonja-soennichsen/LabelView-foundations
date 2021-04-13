@@ -19,7 +19,11 @@ if os.path.isfile('/Users/ssoennic/LabelView/Labelview-foundations/credentials.j
                                                               "https://www.googleapis.com/auth/drive.file", 
                                                               "https://www.googleapis.com/auth/drive"])
 else:
-    pass
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('./credentials.json',
+                                                              ["https://spreadsheets.google.com/feeds", 
+                                                              "https://www.googleapis.com/auth/spreadsheets", 
+                                                              "https://www.googleapis.com/auth/drive.file", 
+                                                              "https://www.googleapis.com/auth/drive"])
 
 client = gspread.authorize(credentials)
 spr = client.open("ecolabels")
