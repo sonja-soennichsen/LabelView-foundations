@@ -33,6 +33,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --doctest-modules --junitxml=junit/test-results.xml
+      with:
+        credentials: ${{ secrets.GAE_SA_KEY }}
     - name: Prepare Deployment 
       run: | 
         more app.yaml

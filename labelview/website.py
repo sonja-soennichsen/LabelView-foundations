@@ -2,25 +2,28 @@ import os
 import gspread
 
 from flask import Flask
-from pathlib import Path
+import os.path
 from flask import render_template, request, jsonify, abort
 from oauth2client.service_account import ServiceAccountCredentials
 
 
 app = Flask(__name__)
+# configure Flask using environment variables
+app.config.from_pyfile("config.py")
 
-credential = ServiceAccountCredentials.from_json_keyfile_name('/Users/ssoennic/LabelView/Labelview-foundations/credentials.json',
+
+if os.path.isfile('/Users/ssoennic/LabelView/Labelview-foundations/credentials.json'):
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('/Users/ssoennic/LabelView/Labelview-foundations/credentials.json',
                                                               ["https://spreadsheets.google.com/feeds", 
                                                               "https://www.googleapis.com/auth/spreadsheets", 
                                                               "https://www.googleapis.com/auth/drive.file", 
                                                               "https://www.googleapis.com/auth/drive"])
-client = gspread.authorize(credential)
+else:
+    pass
+
+client = gspread.authorize(credentials)
 spr = client.open("ecolabels")
 data = spr.worksheet('ecolabelData')
-
-
-# configure Flask using environment variables
-app.config.from_pyfile("config.py")
 
 @app.route('/')
 def index():
@@ -31,7 +34,7 @@ def quiz():
     return render_template('quiz.html')
 
 
-@app.route("/result")
+@app.route("/result", methods=["GET"])
 def result():
     if request.args:
         legal = request.args.get('legal')
@@ -47,14 +50,13 @@ def result():
 
         # Display the query string to the client in a different format
         # return f"(Query) {serialized}  {animals}", 200
-        return render_template('result.html', page_title="Labelview", budget=budget, legal=legal, animal=animals, produce=produce, governance=governance )
+        hh = data.get_all_values()
+        
+        return render_template('result.html', page_title="Labelview", budget=hh, legal=legal, animal=animals, produce=produce, governance=governance )
     else:
 
         return "No query string received", 200 
 
-@app.route('/all_reviews', methods=["GET"])
-def all_reviews():
-    return jsonify(data.get_all_values())
 
 
 
