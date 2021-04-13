@@ -33,7 +33,7 @@ jobs:
     - name: Prepare Test
       env: 
         credentials: ${{ secrets.GAE_SA_KEY }}
-      run: echo "$credentials" > ./LabelView-foundations/credentials.json
+      run: echo "$credentials" > ./credentials.json
     - name: Test with pytest
       run: |
         pytest --doctest-modules --junitxml=junit/test-results.xml
