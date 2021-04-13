@@ -1,12 +1,23 @@
-import redis
 import os
+import gspread
+
 from flask import Flask
-from flask import render_template, request
-from werkzeug.wrappers import Request
-from werkzeug.datastructures import CombinedMultiDict, MultiDict
+from pathlib import Path
+from flask import render_template, request, jsonify, abort
+from oauth2client.service_account import ServiceAccountCredentials
 
 
 app = Flask(__name__)
+
+credential = ServiceAccountCredentials.from_json_keyfile_name('/Users/ssoennic/LabelView/Labelview-foundations/credentials.json',
+                                                              ["https://spreadsheets.google.com/feeds", 
+                                                              "https://www.googleapis.com/auth/spreadsheets", 
+                                                              "https://www.googleapis.com/auth/drive.file", 
+                                                              "https://www.googleapis.com/auth/drive"])
+client = gspread.authorize(credential)
+spr = client.open("ecolabels")
+data = spr.worksheet('ecolabelData')
+
 
 # configure Flask using environment variables
 app.config.from_pyfile("config.py")
@@ -22,7 +33,6 @@ def quiz():
 
 @app.route("/result")
 def result():
-
     if request.args:
         legal = request.args.get('legal')
         budget = request.args.get('budget')
@@ -41,6 +51,10 @@ def result():
     else:
 
         return "No query string received", 200 
+
+@app.route('/all_reviews', methods=["GET"])
+def all_reviews():
+    return jsonify(data.get_all_values())
 
 
 
