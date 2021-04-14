@@ -1,47 +1,48 @@
 {% extends "base.html" %} {% block content %}
 <div class="resultTitle">Your Input</div>
 <div class="result">
-    Your Budget: <b>{{budget}}</b> <br> 
+    Your Budget: <b>{{budget}}</b> <br>
 
-    You {% if legal %} want the label to <b>{{legal}}</b>  {% else %} don't care about the {% endif %} legal requirements <br> <br>
+    You {% if legal %} want the label to <b>{{legal}}</b> {% else %} don't care about the {% endif %} legal requirements
+    <br> <br>
 
     {% if animal %}
-        Your Animal Welfare Criteria: 
-        {% for criteria in animal %} 
-            <li>{{criteria}}</li>
-        {% endfor %} 
-    {% endif %} <br> <br> 
-    
+    Your Animal Welfare Criteria:
+    {% for criteria in animal %}
+    <li>{{criteria}}</li>
+    {% endfor %} <br> <br>
+    {% endif %}
+
     {% if produce %}
-    Your Produce Criteria: 
-        {% for criteria in produce %}
-            <li>{{criteria}}</li>
-        {% endfor %}
-    {% endif %} <br> <br> 
-    
-    {% if produce %}
-        Your Governance Criteria: 
-        {% for criteria in governance %}
-            <li>{{criteria}}</li>
-        {% endfor %}
+    Your Produce Criteria:
+    {% for criteria in produce %}
+    <li>{{criteria}}</li>
+    {% endfor %}<br> <br>
+    {% endif %}
+
+    {% if governance %}
+    Your Governance Criteria:
+    {% for criteria in governance %}
+    <li>{{criteria}}</li>
+    {% endfor %}
     {% endif %}
 </div>
 
 
-{% for label in data %} 
-    {% if label[0] in found %}
-        <div class="labelview" style="margin-top: 5vh;">
-            <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
-            <div class="labelName">{{label[0]}} </div>
-            <div class="border">
-                <div class="title">About the label</div>
-                <p> {{label[6]}}</p>
-                <p> Budget: <b>{{label[1]}}</b></p>
-                <div class="title">Website</div>
-                <p> <a href="{{label[7]}}" target="_blank"> {{label[7]}}</a></p>
-            </div>
-        </div>
-    {% endif %}
+{% for label in data %}
+{% if label[0] in found %}
+<div class="labelview" style="margin-top: 5vh;">
+    <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
+    <div class="labelName">{{label[0]}} </div>
+    <div class="border">
+        <div class="title">About the label</div>
+        <p> {{label[6]}}</p>
+        <p> Budget: <b>{{label[1]}}</b></p>
+        <div class="title">Website</div>
+        <p> <a href="{{label[7]}}" target="_blank"> {{label[7]}}</a></p>
+    </div>
+</div>
+{% endif %}
 {% endfor %}
 
 

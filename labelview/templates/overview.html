@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+
+{% for label in data %}
+<div class="labelview" style="margin-top: 5vh;">
+    <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
+    <div class="labelName">{{label[0]}} </div>
+    <div class="border">
+        <div class="title">About the label</div>
+        <p> {{label[6]}}</p>
+        <p> Budget: <b>{{label[1]}}</b></p>
+        <div class="title">Website</div>
+        <p> <a href="{{label[7]}}" target="_blank"> {{label[7]}}</a></p>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

@@ -62,6 +62,12 @@ def result():
     else:
         return "No query string received", 200 
 
+@app.route('/overview')
+def overview():
+    database = data.get_all_values()
+    return render_template('overview.html', data=database)
+
+
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug=True)
 
