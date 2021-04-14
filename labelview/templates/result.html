@@ -3,7 +3,7 @@
 <div class="result">
     Your Budget: <b>{{budget}}</b> <br> 
 
-    You {% if legal %} want the label to <b>{{legal}}</b>  {% else %} dont't care about the {% endif %} legal requirements <br> <br>
+    You {% if legal %} want the label to <b>{{legal}}</b>  {% else %} don't care about the {% endif %} legal requirements <br> <br>
 
     {% if animal %}
         Your Animal Welfare Criteria: 
@@ -27,53 +27,22 @@
     {% endif %}
 </div>
 
-<div class="labelview" style="margin-top: 5vh;">
-    <img src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e2/Naturland_Logo.svg/1200px-Naturland_Logo.svg.png" id="labelLogo" alt="Naturland Logo" />
-    <div class="labelName">Naturland </div>
-    <div class="border">
-        <div class="title">About the label</div>
-        <p> The Naturland label was founded in 1982 by scientists, farmers and consumers with the aim of promoting organic agriculture worldwide. Meanwhile, Naturland is one of the largest organic associations worldwide. With more than 65,000 certified producers
-            in 58 countries, Naturland is one of the largest organic farming associations in the world. In Germany alone, around 3,700 producers are certified by Naturland.</p>
-        <div class="title">Website</div>
-        <p> <a href="https://naturland.de/en/" target="_blank"> Naturland.de </a></p>
-    </div>
-</div>
 
-<div class="labelview">
-    <img src="https://upload.wikimedia.org/wikipedia/de/thumb/1/17/Demeter_Logo.svg/1280px-Demeter_Logo.svg.png" id="labelLogo" alt="Demeter Logo" />
-    <div class="labelName">Demeter </div>
-    <div class="border">
-        <div class="title">About the label</div>
-        <p> The Naturland label was founded in 1982 by scientists, farmers and consumers with the aim of promoting organic agriculture worldwide. Meanwhile, Naturland is one of the largest organic associations worldwide. With more than 65,000 certified producers
-            in 58 countries, Naturland is one of the largest organic farming associations in the world. In Germany alone, around 3,700 producers are certified by Naturland.</p>
-        <div class="title">Website</div>
-        <p> <a href="https://www.demeter.de/" target="_blank"> Demeter.de </a></p>
-    </div>
-</div>
+{% for label in data %} 
+    {% if label[0] in found %}
+        <div class="labelview" style="margin-top: 5vh;">
+            <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
+            <div class="labelName">{{label[0]}} </div>
+            <div class="border">
+                <div class="title">About the label</div>
+                <p> {{label[6]}}</p>
+                <p> Budget: <b>{{label[1]}}</b></p>
+                <div class="title">Website</div>
+                <p> <a href="{{label[7]}}" target="_blank"> {{label[7]}}</a></p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
 
-<div class="labelview">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Bioland_Logo_2012.svg/1200px-Bioland_Logo_2012.svg.png" id="labelLogo" alt="Bioland Logo" />
-    <div class="labelName">Bioland </div>
-    <div class="border">
-        <div class="title">About the label</div>
-        <p> The Bioland brand has been registered as a trademark since 1978. With over 7,700 producer farms - farmers, gardeners, beekeepers and winegrowers - and over 1,100 partners in production and trade - for example bakeries, dairies, butchers and restaurants
-            - Bioland is the leading organic farming association in Germany. Bioland's most important goal is to "implement, promote and disseminate organic-biological agriculture."</p>
-        <div class="title">Website</div>
-        <p> <a href="https://www.bioland.de/verbraucher" target="_blank"> Bioland.de </a></p>
-    </div>
-</div>
 
-<div class="labelview">
-    <img src="https://ec.europa.eu/info/sites/info/files/food-farming-fisheries/farming/images/eu-organic-logo-600x400.png" id="labelLogo" alt="EU Organic Label Logo" />
-    <div class="labelName">EU Organic Label </div>
-    <div class="border">
-        <div class="title">About the label</div>
-        <p>European Union regulations on organic farming are designed to provide a clear structure for the production of organic goods across the whole of the EU. This is to satisfy consumer demand for trustworthy organic products whilst providing a fair
-            marketplace for producers, distributors and marketers. Anyone within the European Union who wants to call their products "organic," "ecological" or "from controlled organic cultivation" has been required to use the EU organic seal since July
-            1, 2010. It identifies products or produce that originate from organic farming and whose producers or processors comply with the criteria for organic farming as defined by EU law. Those who comply with even stricter standards can additionally
-            use other organic labels.</p>
-        <div class="title">Website</div>
-        <p> <a href="https://ec.europa.eu/info/food-farming-fisheries/farming/organic-farming/organic-logo_en" target="_blank"> ec.europa.eu/info/food-farming-fisheries/farming/organic-farming/organic-logo_en</a></p>
-    </div>
-</div>
 {% endblock %}

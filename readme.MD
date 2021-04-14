@@ -2,9 +2,7 @@
 
 - Activate your virtual environment for this project: `source venv/bin/activate`
 
-- Point Flask to your application: export FLASK_APP=main.py
-
-- Enable hot reloading, debug mode, and other useful features for local development:  export FLASK_ENV=development
+- Point Flask to your application: export FLASK_APP=main.py FLASK_ENV=development
 
 - run your flask application: `flask run`
 
