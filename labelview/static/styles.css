@@ -344,3 +344,17 @@ hr {
   color: #b9aba0;
   border: 1px solid #b2a397;
 }
+
+.aboutTitle {
+  font-size: 2rem;
+  text-align: center;
+  color: #846c59;
+  margin-top: 10vh;
+}
+
+.aboutText {
+  color: #846c59;
+  margin: 5vh 10vw;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

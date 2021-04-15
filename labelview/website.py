@@ -69,6 +69,10 @@ def overview():
     database = data.get_all_values()
     return render_template('overview.html', data=database)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug=True)
