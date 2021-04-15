@@ -5,7 +5,8 @@ from flask import Flask
 import os.path
 from flask import render_template, request
 from oauth2client.service_account import ServiceAccountCredentials
-from labelview.controllers.helperFunction import findLabel
+from labelview.controllers.helperFunction import findAllLabels
+from labelview.controllers.helperFunction import findBestLabel
 
 
 app = Flask(__name__)
@@ -54,11 +55,12 @@ def result():
         database = data.get_all_values()
         
         # Search in Database for Labels
-        foundLabels = findLabel(database, budget, legal, produce, animals, governance)
+        labels_keywords = findAllLabels(database, budget, legal, produce, animals, governance)
+        bestLabel = findBestLabel(labels_keywords[1])
         
         return render_template('result.html', page_title="Labelview", budget=budget,
                                legal=legal, animal=animals, produce=produce, 
-                               governance=governance, data=database, found=foundLabels  )
+                               governance=governance, data=database, found=labels_keywords[0], bestLabel=bestLabel  )
     else:
         return render_template('error.html', page_title="Labelview")
 

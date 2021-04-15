@@ -1,0 +1,44 @@
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 800px) {
+  #coverImage {
+    width: 95vw;
+    left: 2vw;
+  }
+
+  .box {
+    width: 95%;
+  }
+
+  .link {
+    width: 95vw;
+    left: 2vw;
+    top: 55vh;
+  }
+
+  footer {
+    margin: 22vh 1rem 1rem 1rem;
+    width: 95%;
+  }
+
+  .homepage {
+    height: 61vh;
+  }
+
+  form {
+    margin: 1rem 0rem 4rem 0rem;
+    padding: 2rem 2rem 4rem 2rem;
+  }
+
+  label {
+    margin-left: 0;
+  }
+
+  h1 {
+    padding: 4rem 2rem 0 2rem;
+    text-align: center;
+  }
+
+  #submit {
+    margin: 0;
+  }
+}

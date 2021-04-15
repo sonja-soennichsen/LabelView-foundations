@@ -1,11 +1,17 @@
 {% extends "base.html" %} {% block content %}
-<div class="resultTitle">Your Input</div>
+<div class="resultTitle">
+    Your Input
+    <hr>
+</div>
 <div class="result">
+
+    <br>
     Your Budget: <b>{{budget}}</b> <br>
 
     You {% if legal %} want the label to <b>{{legal}}</b> {% else %} don't care about the {% endif %} legal requirements
     <br> <br>
 
+    Best Label: <b>{{ bestLabel }}</b> <br> <br>
     {% if animal %}
     Your Animal Welfare Criteria:
     {% for criteria in animal %}
@@ -31,7 +37,29 @@
 
 {% if found -%}
 {% for label in data %}
-{% if label[0] in found %}
+<!-- Best Fitting label -->
+{% if label[0] in bestLabel %}
+<div class="resultTitle">
+    Best Match
+    <hr>
+</div>
+<div class="labelview" style="margin-top: 5vh;">
+    <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
+    <div class="labelName">{{label[0]}} </div>
+    <div class="border">
+        <div class="title">About the label</div>
+        <p> {{label[6]}}</p>
+        <p> Budget: <b>{{label[1]}}</b></p>
+        <div class="title">Website</div>
+        <p> <a href="{{label[7]}}" target="_blank"> {{label[7]}}</a></p>
+    </div>
+</div> <br>
+<div class="resultTitle"> Also relevant:
+    <hr>
+</div>
+{% endif %}
+<!-- See all other Labels -->
+{% if label[0] in found and label[0] not in bestLabel%}
 <div class="labelview" style="margin-top: 5vh;">
     <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
     <div class="labelName">{{label[0]}} </div>
