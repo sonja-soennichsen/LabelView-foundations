@@ -1,4 +1,4 @@
-
+import operator
 
 def findLabel(database, budget, legal, produce, animals, governance):
     foundLabels = []
@@ -32,6 +32,9 @@ def findLabel(database, budget, legal, produce, animals, governance):
         else:
             length[k] = len(matchedKeywords[k])
 
+    max_key = max(length.items(), key=operator.itemgetter(1))[0]
+    print(max_key)
+    
     print(matchedKeywords)
     print(length)
     return foundLabels

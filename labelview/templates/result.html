@@ -29,6 +29,7 @@
 </div>
 
 
+{% if found -%}
 {% for label in data %}
 {% if label[0] in found %}
 <div class="labelview" style="margin-top: 5vh;">
@@ -44,6 +45,8 @@
 </div>
 {% endif %}
 {% endfor %}
-
+{%- else -%}
+<div class="noResult">Sorry, I couldn't find a label that is fitting your criteria</div>
+{%- endif %}
 
 {% endblock %}

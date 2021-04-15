@@ -60,7 +60,7 @@ def result():
                                legal=legal, animal=animals, produce=produce, 
                                governance=governance, data=database, found=foundLabels  )
     else:
-        return "No query string received", 200 
+        return render_template('error.html', page_title="Labelview")
 
 @app.route('/overview')
 def overview():
