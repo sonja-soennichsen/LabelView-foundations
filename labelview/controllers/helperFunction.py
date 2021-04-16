@@ -3,6 +3,7 @@ import operator
 def findAllLabels(database, budget, legal, produce, animals, governance):
     foundLabels = []
     matchedKeywords =	{}
+    max_key =" "
     
     for i, label in enumerate(database):
         matchedKeywords[label[0]] = []
@@ -24,15 +25,15 @@ def findAllLabels(database, budget, legal, produce, animals, governance):
             if category == legal:
                 matchedKeywords[label[0]].append(category)
                 foundLabels.append(label[0])
-
-
+        if label[1] == budget:
+            if max_key is not findBestLabel(matchedKeywords):
+                max_key = label[0]
     
-    # print(matchedKeywords)
-    return foundLabels, matchedKeywords
+    return foundLabels, max_key
 
 def findBestLabel(matchedKeywords):
     length = {}
- 
+
     for k in matchedKeywords:
         if isinstance(matchedKeywords[k], str):
             length[k] = 1
@@ -40,5 +41,5 @@ def findBestLabel(matchedKeywords):
             length[k] = len(matchedKeywords[k])
 
     max_key = max(length.items(), key=operator.itemgetter(1))[0]
-    
     return max_key  
+
