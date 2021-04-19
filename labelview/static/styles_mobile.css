@@ -25,8 +25,8 @@
     text-align: center;
   }
   .box {
-    margin: 1rem 0 0 0;
-    width: 99%;
+    margin: 0.7rem;
+    width: 92%;
   }
   #coverImage {
     width: 91vw;
@@ -60,5 +60,10 @@
   label {
     margin-left: 0;
     padding: 1rem 0.5rem 1rem 4rem;
+  }
+
+  .labelview p {
+    margin: 4vh 0 0 0;
+    padding: 0 0 0 1rem;
   }
 }

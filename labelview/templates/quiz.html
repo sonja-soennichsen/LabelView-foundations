@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <h1>Select the Attributes you find important in an Ecolabel</h1>
+<p>Tip: Hover over the underlined Criteria to get a more detailed description</p>
 <form action="/result" methods="get">
     <h2>Budget (required)
     </h2>
@@ -24,18 +25,13 @@
 
     <h2>Animal Welfare</h2>
 
-    <label for="crueltyFree">
-        <input type="checkbox" id="crueltyFree" name="animal" value="crueltyFree">
-        Cruelty Free
-        <span class="checkmark"></span>
-    </label>
     <label for="stockDensity">
-        Controlled Stock Density
+        <abbr title="Less animals per hectare of land">Controlled Stock Density</abbr>
         <input type="checkbox" id="stockDensity" name="animal" value="stockDensity">
         <span class="checkmark"></span>
     </label>
     <label for="freeRange">
-        Access to Free Range
+        <abbr title="Permanent access with sufficient space">Access to Free Range</abbr>
         <input type="checkbox" id="freeRange" name="animal" value="freeRange">
         <span class="checkmark"></span>
     </label>
@@ -45,22 +41,24 @@
         <span class="checkmark"></span>
     </label>
     <label for="compulsoryPasturage">
-        Compulsory Pasturage
+        <abbr title="Pasture for milkcows mandatory">Compulsory Pasturage</abbr>
         <input type="checkbox" id="compulsoryPasturage" name="animal" value="compulsoryPasturage">
         <span class="checkmark"></span>
     </label>
-    <label for="geneticEngineeringAnimals">
-        No Genetic Engineering
+    <label for="geneticEngineeringAnimals">No
+        Genetic Engineering or genetically modified feed
         <input type="checkbox" id="geneticEngineeringAnimals" name="animal" value="geneticEngineeringAnimals">
         <span class="checkmark"></span>
     </label>
     <label for="cowTrainer">
-        No Cow Trainer
+        <abbr title="electrical aids used to prevent the cows’ natural excretion behaviour">No Cow Trainer</abbr>
         <input type="checkbox" id="cowTrainer" name="animal" value="cowTrainer">
         <span class="checkmark"></span>
     </label>
     <label for="antibiotics">
-        Limited Antibiotics
+        <abbr
+            title="Animals are administered high quantities of antibiotics, also as a preventive measure, especially in conventional intensive livestock farming. Their residues can get into the water and are also detectable in the end products (meat). This leads to dangerous antibiotic resistance.">
+            Antibiotics limited and only in Emergencies</abbr>
         <input type="checkbox" id="antibiotics" name="animal" value="antibiotics">
         <span class="checkmark"></span>
     </label> <br><br><br>
@@ -68,64 +66,88 @@
     <h2>Produce</h2>
 
     <label for="plantEnginneering">
-        No Plant Genetic Engineering
+        <abbr
+            title="No transfer of genetic material from one species to another in a manner which is not possible naturally (with traditional cultivation techniques)">No
+            Plant Genetic Engineering</abbr>
         <input type="checkbox" id="plantEnginneering" name="produce" value="plantEnginneering">
         <span class="checkmark"></span>
     </label>
     <label for="water">
-        Sustainable use of water
+        <abbr
+            title="In areas with scarce water resources (e.g. draw up a water management plan, use of efficient and water-saving irrigation systems, etc.)">Sustainable
+            use of water</abbr>
         <input type="checkbox" id="water" name="produce" value="water">
         <span class="checkmark"></span>
     </label>
     <label for="wasteManagement">
-        Waste Management
+        <abbr
+            title="Possible risk factors (dangerous waste, emission sources, and sources of contamination e. g. discharge of sewage sludge) must be eliminated">Waste
+            Management</abbr>
         <input type="checkbox" id="wasteManagement" name="produce" value="wasteManagement">
         <span class="checkmark"></span>
     </label>
     <label for="fertilizerAmount">
-        Controlled amounts of Fertilizer
+        Controlled amounts of Fertiliser
         <input type="checkbox" id="fertilizerAmount" name="produce" value="fertilizerAmount">
         <span class="checkmark"></span>
     </label>
     <label for="organicFertilizer">
-        Organic Fertilizer
+        Organic Fertiliser
         <input type="checkbox" id="organicFertilizer" name="produce" value="organicFertilizer">
         <span class="checkmark"></span>
     </label>
     <label for="mealFertilizer">
-        No Meal Fertilizer (Bone, Blood etc.)
+        <abbr
+            title="Bone meal fertilizer is made from cooked or steamed animal bones, which are then ground into a fine powder for application on plants or crops.">No
+            Meal Fertiliser (Bone, Blood etc.)</abbr>
         <input type="checkbox" id="mealFertilizer" name="produce" value="mealFertilizer">
         <span class="checkmark"></span>
     </label>
     <label for="additives">
-        Fewer approved additives
+        <abbr
+            title="Positive list of permissible food additives is much shorter and restricted to specific purposes and product groups. EU Regulatiions allow 53 additives">Fewer
+            approved additives</abbr>
         <input type="checkbox" id="additives" name="produce" value="additives">
         <span class="checkmark"></span>
     </label><br><br><br>
 
     <h2>Governance</h2>
     <label for="transparent">
-        Transparent goals, claims and structure
+        <abbr title="Objectives and sponsorship are explained in publicly available information material.
+        Award criteria, award procedures and control procedures are documented in a comprehensible and traceable manner for consumers, published and accessible free of charge.
+        The label's logo is designed in such a way that it cannot be confused with any other label.">Transparent goals,
+            claims and structure</abbr>
         <input type="checkbox" id="transparent" name="governance" value="transparent">
         <span class="checkmark"></span>
     </label>
     <label for="independent">
-        Controlled by independent third-party
+        <abbr title="The criteria are developed with the assistance of competent bodies that are largely independent of the mark holder.
+        The mark provider, mark recipient and tester are each largely independent of one another in legal and economic terms.
+        Compliance with the award criteria is monitored by an independent and clearly identifiable body.">Controlled by
+            independent third-party</abbr>
         <input type="checkbox" id="independent" name="governance" value="independent">
         <span class="checkmark"></span>
     </label>
     <label for="control">
-        Frequent, rigid control
+        <abbr
+            title="Clear, verifiable award criteria with a clear reference are in place.
+       Compliance with the award criteria is comprehensively monitored. If the label is awarded for a limited period of time, extensions of the deadline are only granted after renewed monitoring of compliance with the award criteria.
+       In the event of violations of the award criteria, rectification is demanded within a reasonable, manageable period of time; if necessary, further sanctions are imposed, up to and including withdrawal of the label.">Frequent,
+            rigid control</abbr>
         <input type="checkbox" id="control" name="governance" value="control">
         <span class="checkmark"></span>
     </label>
     <label for="traceability">
-        Guarenteed Traceability
+        <abbr
+            title="Source of raw goods is clearly defined and complies with the requirements of Naturland’s standards. Guaranteed traceability through every commercial stage right back to the farm">Guarenteed
+            Traceability</abbr>
         <input type="checkbox" id="traceability" name="governance" value="traceability">
         <span class="checkmark"></span>
     </label>
     <label for="fullConversion">
-        Mandatory Full Farm Conversion
+        <abbr
+            title=" EU regulations allow partial conversions of farms. Transfers of pesticides, synthetic fertilizers or even genetically modified material to the organic goods possible">Mandatory
+            Full Farm Conversion</abbr>
         <input type="checkbox" id="fullConversion" name="governance" value="fullConversion">
         <span class="checkmark"></span>
     </label>
@@ -148,17 +170,32 @@
         Fairtrade
         <input type="checkbox" id="fair" name="governance" value="fair">
         <span class="checkmark"></span>
+    </label>
+    <label for="crueltyFree">
+        <abbr
+            title="In the animal rights movement, cruelty-free is a label for products or activities that do not harm or kill animals anywhere in the world. Products tested on animals or made from animals are not considered cruelty-free, since these tests are often painful and cause the suffering and death of millions of animals every year.">Cruelty
+            Free</abbr>
+        <input type="checkbox" id="crueltyFree" name="governance" value="crueltyFree">
+        <span class="checkmark"></span>
+    </label>
+    <label for="vegan">
+        Vegan
+        <input type="checkbox" id="vegan" name="governance" value="vegan">
+        <span class="checkmark"></span>
     </label><br>
 
     <h2>Legal requirements (EU)</h2>
     <label for="meets" class="container">
         <input type="radio" id="meets" name="legal" value="meet">
-        Meets legal standards
+        <abbr title="EU-Regulations">Meets legal standards</abbr>
         <span class="checkmark"></span>
     </label>
     <label for="exceeds" class="container">
         <input type="radio" id="exceeds" name="legal" value="exceeds">
-        Exceeds legal standards
+        <abbr
+            title="The award criteria go well beyond what is required by law.
+       The criteria are revised on the basis of more recent findings and standards and are suitable to enable relevant improvements in the field of the label (ecological, health, social, technical, cultural requirements, etc.).">Exceeds
+            legal standards</abbr>
         <span class="checkmark"></span>
     </label><br>
     <input type="submit" value="GET RESULTS" id="submit">

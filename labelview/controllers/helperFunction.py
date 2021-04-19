@@ -28,7 +28,6 @@ def findAllLabels(database, budget, legal, produce, animals, governance):
         if label[1] == budget:
             if max_key is not findBestLabel(matchedKeywords):
                 max_key = label[0]
-    
     return foundLabels, max_key
 
 def findBestLabel(matchedKeywords):
