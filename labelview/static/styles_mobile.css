@@ -3,14 +3,16 @@
     width: 100%;
   }
   .logo {
-    padding: 0;
     text-align: center;
     float: none;
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 0 0.5rem 0;
   }
 
   form {
     margin: 2rem 1rem 1rem 1rem;
-    padding: 2rem 1rem 4rem 1rem;
+    padding: 2rem 0 4rem 0;
     border-radius: 5px;
   }
 
@@ -36,12 +38,11 @@
   }
 
   .link {
-    position: absolute;
+    position: inherit;
     width: 91vw;
     height: 12vh;
-    left: 4.3vw;
-    top: 61vh;
     padding-top: 6vh;
+    margin: 1rem;
   }
 
   .link:hover {
@@ -62,10 +63,6 @@
     line-height: 4vh;
   }
 
-  .logo a {
-    margin: 1rem 25vw;
-  }
-
   .homepage {
     height: max-content;
   }
@@ -73,6 +70,7 @@
   label {
     margin-left: 0;
     padding: 1rem 0.5rem 1rem 4rem;
+    border: 4px;
   }
 
   .labelview p {

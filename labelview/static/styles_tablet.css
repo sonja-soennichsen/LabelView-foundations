@@ -3,6 +3,7 @@
   #coverImage {
     width: 95vw;
     left: 2vw;
+    top: 25rem;
   }
 
   .box {
@@ -12,7 +13,7 @@
   .link {
     width: 95vw;
     left: 2vw;
-    top: 55vh;
+    top: 78vh;
   }
 
   footer {
@@ -56,5 +57,22 @@
 
   .parallax {
     height: 40%;
+  }
+
+  .headline {
+    width: 95vw;
+    height: 16rem;
+    left: 2vw;
+    top: 8rem;
+    box-shadow: none;
+  }
+
+  .headline .text {
+    margin: 1rem auto auto 1.2rem;
+    width: 67%;
+  }
+
+  .homepage {
+    height: 72vh;
   }
 }
