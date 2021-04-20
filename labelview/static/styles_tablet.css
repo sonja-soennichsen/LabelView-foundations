@@ -41,4 +41,20 @@
   #submit {
     margin: 0;
   }
+
+  abbr {
+    text-decoration: none;
+  }
+
+  abbr:hover:after {
+    display: none;
+  }
+
+  .tip {
+    display: none;
+  }
+
+  .parallax {
+    height: 40%;
+  }
 }

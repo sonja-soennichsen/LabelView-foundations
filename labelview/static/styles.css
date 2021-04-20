@@ -349,17 +349,39 @@ hr {
   font-size: 2rem;
   text-align: center;
   color: #846c59;
-  margin-top: 10vh;
+  margin: 10vh 0 5vh 0;
 }
 
 .aboutText {
   color: #846c59;
   margin: 5vh 10vw;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5rem;
+  hyphens: auto;
+  text-align: justify;
 }
 
-p {
+.parallax {
+  /* The image used */
+  background-image: url("https://www.wir-essen-gesund.de/wp-content/uploads/2015/05/BioSiegel.jpg");
+  height: 60%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutText a {
+  color: #614e3e;
+  text-decoration: none;
+}
+
+ol li {
+  margin-bottom: 1rem;
+}
+
+.tip {
   color: #917b6a;
   padding: 0 0 0 4rem;
   font-size: 1.2rem;
@@ -380,4 +402,13 @@ abbr:hover::after {
   content: attr(title);
   font-size: 1rem;
   border-radius: 10px 10px 0 0;
+}
+
+.quote {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 2rem;
+  color: #614e3e;
 }

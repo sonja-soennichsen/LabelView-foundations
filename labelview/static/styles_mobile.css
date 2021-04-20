@@ -66,4 +66,26 @@
     margin: 4vh 0 0 0;
     padding: 0 0 0 1rem;
   }
+
+  abbr {
+    text-decoration: none;
+  }
+
+  abbr:hover:after {
+    display: none;
+  }
+
+  .tip {
+    display: none;
+  }
+
+  .quote {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 2rem auto;
+  }
+
+  .parallax {
+    height: 40%;
+  }
 }
