@@ -71,10 +71,10 @@ table a:hover::after {
 }
 
 #coverImage {
-  width: 70vw;
+  width: 63vw;
   position: absolute;
-  left: 4rem;
-  top: 11rem;
+  left: 13rem;
+  top: 15rem;
   opacity: 0.9;
 }
 
@@ -82,21 +82,25 @@ a {
   color: #fff;
 }
 
+.homepage a {
+  color: #3b6858;
+  font-weight: bold;
+}
 .link {
   position: absolute;
   z-index: 10;
-  width: 35vw;
-  height: 19vh;
-  background-color: #9fb9b0;
-  left: 50vw;
-  top: 60vh;
+  width: 25vw;
+  height: 15vh;
+  background-color: #bcd5cc;
+  left: 57vw;
+  top: 65vh;
   text-align: center;
-  padding-top: 11vh;
+  padding-top: 10vh;
   transition: 0.4s;
 }
 
 .link:hover {
-  box-shadow: -15px 15px #677551;
+  box-shadow: -1.5rem 1.5rem #3b6858;
 }
 
 h1 {
@@ -295,7 +299,7 @@ h2 {
 }
 
 .homepage {
-  height: 100vh;
+  height: 73vh;
 }
 
 .result {
@@ -363,7 +367,7 @@ hr {
 
 .parallax {
   /* The image used */
-  background-image: url("https://www.wir-essen-gesund.de/wp-content/uploads/2015/05/BioSiegel.jpg");
+  background-image: url("https://www.codecheck.info/news/bilder/Gemueseregal-im-Supermarkt-650x371-1-55135.jpeg");
   height: 60%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -411,4 +415,22 @@ abbr:hover::after {
   line-height: 2rem;
   margin: 2rem;
   color: #614e3e;
+}
+
+.headline {
+  background-color: #e9e0d9;
+  color: #5f5955;
+  font-weight: bold;
+  width: 25rem;
+  height: 16rem;
+  z-index: 10;
+  position: absolute;
+  left: 10rem;
+  top: 10rem;
+  box-shadow: 1.5rem 1.5rem #605248;
+}
+
+.headline .text {
+  margin: -1rem auto auto -0.8rem;
+  width: 67%;
 }

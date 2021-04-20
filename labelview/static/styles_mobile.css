@@ -7,52 +7,65 @@
     text-align: center;
     float: none;
   }
-  img {
-    width: 91vw;
-    margin: 3rem 0 0 1rem;
-  }
+
   form {
     margin: 2rem 1rem 1rem 1rem;
     padding: 2rem 1rem 4rem 1rem;
     border-radius: 5px;
   }
+
   h1 {
     font-size: 2rem;
     padding: 1rem 0 0 1rem;
     text-align: center;
   }
+
   td {
     text-align: center;
   }
+
   .box {
     margin: 0.7rem;
     width: 92%;
   }
+
   #coverImage {
     width: 91vw;
     position: inherit;
+    margin: 1rem 0 0 1rem;
   }
+
   .link {
     position: absolute;
     width: 91vw;
     height: 12vh;
     left: 4.3vw;
-    top: 94vw;
+    top: 61vh;
     padding-top: 6vh;
   }
+
+  .link:hover {
+    box-shadow: 0.5rem 0.5rem #3b6858;
+  }
+
   .form {
     border-radius: 5px;
   }
+
   footer {
     width: 90%;
-    margin-top: 30vh;
+    margin-top: 28vh;
+    padding: 2rem 0;
   }
+
   footer a {
     line-height: 4vh;
   }
+
   .logo a {
     margin: 1rem 25vw;
   }
+
   .homepage {
     height: max-content;
   }
@@ -87,5 +100,19 @@
 
   .parallax {
     height: 40%;
+  }
+
+  .headline {
+    position: inherit;
+    width: 91vw;
+    height: auto;
+    margin-left: 1rem;
+    box-shadow: none;
+    padding: 0.7rem 0 1rem 0;
+  }
+
+  .headline .text {
+    margin: 0 1rem;
+    width: 72%;
   }
 }
