@@ -69,6 +69,10 @@ def overview():
 def about():
     return render_template('about.html')
 
+@app.route('/resources')
+def resources():
+    return render_template('resources.html')
+
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug=True)

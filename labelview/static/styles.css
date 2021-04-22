@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 3vh;
   margin: 0;
 }
@@ -354,15 +354,15 @@ hr {
 .aboutTitle {
   font-size: 2rem;
   text-align: center;
-  color: #846c59;
+  color: #7d7066;
   margin: 10vh 0 5vh 0;
 }
 
 .aboutText {
-  color: #846c59;
+  color: #7d7066;
   margin: 5vh 10vw;
   font-size: 1.1rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   hyphens: auto;
   text-align: justify;
 }
@@ -435,4 +435,9 @@ abbr:hover::after {
 .headline .text {
   margin: -1rem auto auto -0.8rem;
   width: 67%;
+}
+
+.resourceTitle {
+  font-size: 1.5rem;
+  margin: 3rem 0;
 }
