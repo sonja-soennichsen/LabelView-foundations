@@ -71,7 +71,8 @@ def about():
 
 @app.route('/resources')
 def resources():
-    return render_template('resources.html')
+    database = data.get_all_values()
+    return render_template('resources.html', data=database)
 
 
 if __name__ == "__main__":

@@ -5,8 +5,12 @@
     <p>
         <a href="https://utopia.de/"> https://utopia.de/</a><br>
 
-        Utopia is a german Website, that offers userful information about healthy veganisism, living and consuming more
-        sustainably, as well as summarizing Information about ecolabels and comparing the most important labels with
+        Utopia is a german Website, that offers userful information about healthy veganism, living and consuming more
+        sustainably, as well as <u><a href="https://utopia.de/siegel-guide/">summarizing</a> </u>Information about
+        ecolabels
+        and <u><a href="https://utopia.de/ratgeber/bio-siegel-haben-die-tiere-davon/">comparing</a></u> the most
+        important
+        labels with
         each
         other. The Articles are well written and have helped me a lot during my research about this website.
     </p>
@@ -26,6 +30,15 @@
         Siegelcheck is available as an app and as a website. It is a very useful while shopping because you can scan the
         label and it returns information about the label and an assessement about the quality.
     </p>
+    <div class="resourceTitle">Label Links </div>
+
+    {% for label in data %}
+    <div class="labelName">
+        {{label[0]}}:
+        <a href="{{label[7]}}" target="_blank"> {{label[7]}}</a>
+    </div>
+    <br>
+    {% endfor %}
 </div>
 
 

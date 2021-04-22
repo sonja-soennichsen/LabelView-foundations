@@ -113,4 +113,8 @@
     margin: 0 1rem;
     width: 72%;
   }
+
+  table a {
+    font-size: 0.8rem;
+  }
 }

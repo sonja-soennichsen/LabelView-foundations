@@ -243,6 +243,14 @@ input {
   font-size: 2.5rem;
 }
 
+.labelName {
+  text-align: left;
+}
+
+.aboutText a:hover {
+  color: #917b6a;
+}
+
 .labelview #labelLogo {
   width: 20vw;
   float: right;
@@ -258,6 +266,7 @@ input {
 .labelview p {
   margin: 2vh 0 0 4vw;
   color: #614e3e;
+  text-align: justify;
   font-size: 1rem;
 }
 
