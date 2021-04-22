@@ -1,43 +1,8 @@
 {% extends "base.html" %} {% block content %}
-<div class="resultTitle">
-    Your Input
-    <hr>
-</div>
-<div class="result">
-
-    <br>
-    Your Budget: <b>{{budget}}</b> <br>
-
-    You {% if legal %} want the label to <b>{{legal}}</b> {% else %} don't care about the {% endif %} legal requirements
-    <br> <br>
-
-    Best Label: <b>{{ bestLabel }}</b> <br> <br>
-    {% if animal %}
-    Your Animal Welfare Criteria:
-    {% for criteria in animal %}
-    <li>{{criteria}}</li>
-    {% endfor %} <br> <br>
-    {% endif %}
-
-    {% if produce %}
-    Your Produce Criteria:
-    {% for criteria in produce %}
-    <li>{{criteria}}</li>
-    {% endfor %}<br> <br>
-    {% endif %}
-
-    {% if governance %}
-    Your Governance Criteria:
-    {% for criteria in governance %}
-    <li>{{criteria}}</li>
-    {% endfor %}
-    {% endif %}
-</div>
-
 
 {% if found -%}
 {% for label in data %}
-<!-- Best Fitting label -->
+<!-- Displaying Best Fitting label -->
 {% if label[0] == bestLabel %}
 <div class="resultTitle">
     Best Match
@@ -65,7 +30,7 @@
 {% endif %}
 
 {% for label in data %}
-<!-- See all other Labels -->
+<!--Displaying other Labels that might also fit -->
 {% if label[0] in found and label[0] not in bestLabel%}
 <div class="labelview" style="margin-top: 5vh;">
     <img src="{{label[8]}}" id="labelLogo" alt="Naturland Logo" />
