@@ -1,5 +1,5 @@
 /* Media Query for low resolution  Tablets, Ipads */
-@media (min-width: 481px) and (max-width: 800px) {
+@media (min-width: 481px) and (max-width: 1030px) {
   #coverImage {
     width: 95vw;
     left: 2vw;
@@ -7,7 +7,7 @@
   }
 
   .box {
-    width: 95%;
+    width: 95vw;
   }
 
   .link {
