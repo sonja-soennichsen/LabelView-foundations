@@ -11,8 +11,10 @@ You should have:
 
 - Create a virtual environment: `python3.8 -m venv venv`
 
-- Activate your virtual environment
+- Activate your virtual environment:
+
   macOS/Linux: `source venv/bin/activate`
+
   Windows: `venv\Scripts\activate.bat`
 
 - Download the Python modules: `pip install -r requirements.txt`
