@@ -14,9 +14,7 @@ To Lint your app: `flake8 --exclude venv`
 
 ### Get Set Up for Local Development:
 
-`python3.8 -m venv venv`
-`pip install -r requirements.txt`
-`uwsgi --http-socket 127.0.0.1:5000 --wsgi-file labelview/website.py --callable app --processes 4 --threads 2 --stats 127.0.0.1:8181 -H venv/`
+> `python3.8 -m venv venv` >`pip install -r requirements.txt` >`uwsgi --http-socket 127.0.0.1:5000 --wsgi-file labelview/website.py --callable app --processes 4 --threads 2 --stats 127.0.0.1:8181 -H venv/`
 
 ## Every Time You Develop on Your Project
 
